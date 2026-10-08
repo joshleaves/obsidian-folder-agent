@@ -1,0 +1,9 @@
+{
+	"id": "folder-agent",
+	"name": "Folder Agent",
+	"version": "1.0.0",
+	"minAppVersion": "1.13.0",
+	"description": "Hides AI agent instruction files from the file explorer and marks their folders with an icon that opens the active one.",
+	"author": "Arnaud 'red' Rouyer",
+	"isDesktopOnly": true
+}

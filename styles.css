@@ -1,0 +1,114 @@
+/* Folder Agent styles */
+
+/*
+ * Agent files are hidden by adding .folder-agent-hidden to their file explorer
+ * row; see src/file-explorer.ts.
+ */
+
+.folder-agent-hidden {
+	display: none !important;
+}
+
+/* Agent icon of a folder that contains an agent file. */
+
+.folder-agent-badge {
+	display: flex;
+	align-items: center;
+	flex: 0 0 auto;
+	margin-inline-start: auto;
+	padding-inline: 3px;
+	color: var(--icon-color);
+	opacity: 0.7;
+	cursor: pointer;
+	user-select: none;
+	pointer-events: auto;
+}
+
+.folder-agent-badge > svg {
+	width: 1em;
+	height: 1em;
+}
+
+.nav-folder-title:hover > .folder-agent-badge,
+.folder-agent-badge:hover {
+	opacity: 1;
+}
+
+/* Settings: one compact row per configured agent file name. */
+
+/*
+ * This is a short configuration list, not a full width form: the declarative
+ * list stretches its entries across the settings pane, so the list, the
+ * containers it renders for the entries and the rows themselves are sized to
+ * their content. Fixed field widths keep the entries in scannable columns.
+ */
+.folder-agent-list,
+.folder-agent-list > *,
+.folder-agent-entry {
+	width: fit-content;
+	max-width: 100%;
+}
+
+.folder-agent-list {
+	align-items: flex-start;
+}
+
+.folder-agent-entry {
+	justify-content: flex-start;
+}
+
+.folder-agent-entry .setting-item-info {
+	flex-grow: 0;
+}
+
+/*
+ * The declarative settings API always renders a row label, but the file name is
+ * editable in the row itself, so the label is hidden instead of repeated.
+ */
+.folder-agent-entry .setting-item-name {
+	display: none;
+}
+
+.folder-agent-entry .setting-item-control {
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	gap: 4px;
+}
+
+.folder-agent-preview {
+	display: flex;
+	align-items: center;
+	color: var(--icon-color);
+}
+
+.folder-agent-preview > svg {
+	width: 1em;
+	height: 1em;
+}
+
+.folder-agent-name-input {
+	width: 14em;
+}
+
+.folder-agent-icon-input {
+	width: 14em;
+	text-align: center;
+}
+
+.folder-agent-icon-input.is-invalid {
+	border-color: var(--text-error);
+}
+
+/* One suggestion of the icon field: the icon and its name. */
+
+.folder-agent-icon-option {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.folder-agent-icon-option > svg {
+	width: 1em;
+	height: 1em;
+	color: var(--icon-color);
+}
