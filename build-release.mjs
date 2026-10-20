@@ -17,7 +17,7 @@ const RELEASE_FILES = ['main.js', 'manifest.json', 'styles.css'];
 await rm(DIST, { recursive: true, force: true });
 await mkdir(DIST, { recursive: true });
 for (const file of RELEASE_FILES) {
-	await copyFile(file, join(DIST, file));
+  await copyFile(file, join(DIST, file));
 }
 
 console.log(`Release files copied to ${DIST}/: ${RELEASE_FILES.join(', ')}`);

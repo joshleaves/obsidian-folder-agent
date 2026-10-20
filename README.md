@@ -110,8 +110,7 @@ build produces in the root as well (which is what `bun run dev` writes while
 watching).
 
 Requires Obsidian 1.13.0 or later, because the settings tab uses the
-declarative settings API introduced there. The plugin works on desktop and
-mobile (`isDesktopOnly: false`).
+declarative settings API introduced there. The plugin works only on desktop.
 
 ## Technical limitations
 
@@ -147,19 +146,6 @@ Because rows are matched by their `data-path` attribute, a row whose attribute
 Obsidian has not updated yet (a known quirk when a folder is renamed) can keep
 its previous state until the explorer re-renders that row. Collapsing and
 expanding the folder, or reloading Obsidian, resolves it.
-
-## Releasing
-
-```bash
-bun run release   # lint + production build, leaves the artifacts in dist/
-```
-
-`bun run release` does not tag, push or change any version; those stay
-explicit. To publish: bump the version with
-`bun version patch|minor|major` (which updates `manifest.json` and
-`versions.json`), tag the release with the manifest version (no `v` prefix) and
-attach `dist/main.js`, `dist/manifest.json` and `dist/styles.css`. The GitHub
-workflow in `.github/workflows/release.yml` does the tagging and uploading.
 
 ## License
 
