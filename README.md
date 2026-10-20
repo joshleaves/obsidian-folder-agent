@@ -82,15 +82,15 @@ Folder Agent File
 This project uses TypeScript with the Obsidian type definitions and esbuild.
 
 ```bash
-npm install       # install dependencies
-npm run dev       # watch build to main.js (for local development)
-npm run build     # type check, production build, refresh dist/
-npm run lint      # oxlint + eslint (eslint-plugin-obsidianmd)
-npm run release   # lint, then the production build
+bun install       # install dependencies
+bun run dev       # watch build to main.js (for local development)
+bun run build     # type check, production build, refresh dist/
+bun run lint      # oxlint + eslint (eslint-plugin-obsidianmd)
+bun run release   # lint, then the production build
 ```
 
 To try it out, put this repository into a vault as
-`<Vault>/.obsidian/plugins/folder-agent/`, run `npm run dev`, and enable the
+`<Vault>/.obsidian/plugins/folder-agent/`, run `bun run dev`, and enable the
 plugin in **Settings → Community plugins**.
 
 A production build also assembles `dist/`, which contains exactly the three
@@ -106,7 +106,7 @@ dist/
 `dist/` is recreated from scratch on every build, so it never contains stale
 files. Nothing in it is generated: `manifest.json` and `styles.css` stay
 canonical source files in the repository root, and `main.js` is the bundle the
-build produces in the root as well (which is what `npm run dev` writes while
+build produces in the root as well (which is what `bun run dev` writes while
 watching).
 
 Requires Obsidian 1.13.0 or later, because the settings tab uses the
@@ -151,12 +151,12 @@ expanding the folder, or reloading Obsidian, resolves it.
 ## Releasing
 
 ```bash
-npm run release   # lint + production build, leaves the artifacts in dist/
+bun run release   # lint + production build, leaves the artifacts in dist/
 ```
 
-`npm run release` does not tag, push or change any version; those stay
+`bun run release` does not tag, push or change any version; those stay
 explicit. To publish: bump the version with
-`npm version patch|minor|major` (which updates `manifest.json` and
+`bun version patch|minor|major` (which updates `manifest.json` and
 `versions.json`), tag the release with the manifest version (no `v` prefix) and
 attach `dist/main.js`, `dist/manifest.json` and `dist/styles.css`. The GitHub
 workflow in `.github/workflows/release.yml` does the tagging and uploading.
