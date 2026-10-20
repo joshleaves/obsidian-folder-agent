@@ -1,5 +1,7 @@
 # Folder Agent
 
+![](./promo/FolderAgent-Example.png)
+
 Folder Agent hides AI agent instruction files from the Obsidian file explorer
 and marks the folders that contain them with an icon that opens the active
 agent file.
@@ -20,16 +22,19 @@ only configure which file names may hold agent instructions.
   the agent files of that folder (marking the active one) and can create new
   ones.
 
+![](./promo/FolderAgent-Access.png)
+
 ## Configured agent file names
 
 The plugin keeps an ordered list of file names in
 **Settings → Community plugins → Folder Agent**. The default is `AGENTS.md`,
 but any file name works, for example:
 
-1. `MY-AGENT-CONFIG.md`
-2. `AGENTS.md`
+1. `AGENTS.md`
+2. `CLAUDE.md`
 3. `GEMINI.md`
-4. `.COPILOT.config`
+
+![](./promo/FolderAgent-Settings.png)
 
 The order defines precedence. If a folder contains several of them, the first
 existing file in the list is that folder's **active** agent file, and it is the
